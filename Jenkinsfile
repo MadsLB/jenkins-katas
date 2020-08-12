@@ -13,6 +13,7 @@ pipeline {
           agent {
             docker {
               image 'gradle:jdk11'
+              args 'skipDefaultCheckout(true)'
             }
 
           }
@@ -22,6 +23,19 @@ pipeline {
           }
         }
 
+      }
+    }
+
+    stage('clone down') {
+      agent {
+        node {
+          label 'host'
+        }
+
+      }
+      steps {
+        sh 'git stash'
+        sh 'git '
       }
     }
 
