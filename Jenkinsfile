@@ -34,7 +34,6 @@ pipeline {
       }
       steps {
         sh 'git stash'
-        sh 'git '
       }
     }
 
